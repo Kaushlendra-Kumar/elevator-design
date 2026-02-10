@@ -4,7 +4,7 @@
 #include <chrono>
 #include <string>
 
-// ============== Enums ==============
+// ============== Enums =============
 
 enum class Direction { 
     Up, 
