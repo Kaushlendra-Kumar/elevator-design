@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-01-15T10:00:00.000Z" agent="Mozilla/5.0" version="22.1.0" type="device">
+  
+  <!-- PAGE 1: System Architecture (HLD) -->
+  <diagram id="system-architecture" name="1. System Architecture">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title1" value="&lt;b&gt;Elevator Simulation - System Architecture&lt;/b&gt;&lt;br&gt;Master Controller Model" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="350" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- CLI Layer -->
+        <mxCell id="cli-layer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="200" y="80" width="750" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="cli-label" value="&lt;b&gt;CLI / Main Layer&lt;/b&gt;&lt;br&gt;Command Parsing, Configuration, User Interface" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="450" y="100" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cli-box1" value="main.cpp" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="220" y="95" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cli-box2" value="CLI Class" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="320" y="95" width="80" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow 1 -->
+        <mxCell id="arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="575" y="160" as="sourcePoint" />
+            <mxPoint x="575" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow1-label" value="Commands" style="text;html=1;strokeColor=none;fillColor=none;align=center;" vertex="1" parent="1">
+          <mxGeometry x="580" y="170" width="60" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Simulation Engine Layer -->
+        <mxCell id="engine-layer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="200" y="200" width="750" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="engine-label" value="&lt;b&gt;Simulation Engine Layer&lt;/b&gt;&lt;br&gt;Clock Management, Event Loop, Thread Coordination" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="450" y="210" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="engine-box1" value="Simulation&lt;br&gt;Engine" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="220" y="230" width="90" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="engine-box2" value="Event&lt;br&gt;Queue" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="330" y="230" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="engine-box3" value="Logger" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="430" y="230" width="70" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow 2 -->
+        <mxCell id="arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="575" y="300" as="sourcePoint" />
+            <mxPoint x="575" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow2-label" value="Events" style="text;html=1;strokeColor=none;fillColor=none;align=center;" vertex="1" parent="1">
+          <mxGeometry x="580" y="310" width="50" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Master Controller Layer -->
+        <mxCell id="controller-layer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="200" y="340" width="750" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="controller-label" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;Master Controller Layer&lt;/font&gt;&lt;/b&gt;&lt;br&gt;Centralized Scheduling using LOOK Algorithm" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="450" y="350" width="280" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="master-box" value="&lt;b&gt;Master&lt;br&gt;Controller&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="280" y="380" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="assignments-box" value="Assignments&lt;br&gt;Map" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="410" y="390" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="look-box" value="LOOK&lt;br&gt;Algorithm" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="510" y="390" width="80" height="40" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow 3 -->
+        <mxCell id="arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="575" y="460" as="sourcePoint" />
+            <mxPoint x="575" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="arrow3-label" value="Commands" style="text;html=1;strokeColor=none;fillColor=none;align=center;" vertex="1" parent="1">
+          <mxGeometry x="580" y="470" width="60" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Domain Layer -->
+        <mxCell id="domain-layer" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="200" y="500" width="750" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="domain-label" value="&lt;b&gt;Domain Layer&lt;/b&gt;&lt;br&gt;Core Business Objects" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="480" y="510" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="building-box" value="&lt;b&gt;Building&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="220" y="550" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="elevator-box1" value="Elevator 0" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="350" y="550" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="elevator-box2" value="Elevator 1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="450" y="550" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="elevator-box3" value="Elevator 2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="550" y="550" width="80" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="floors-box" value="Floors&lt;br&gt;1..12" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="680" y="550" width="70" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Legend -->
+        <mxCell id="legend-title" value="&lt;b&gt;Legend&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;" vertex="1" parent="1">
+          <mxGeometry x="760" y="80" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="760" y="105" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend1-text" value="Controller" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="785" y="102" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="760" y="125" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend2-text" value="Engine" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="785" y="122" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="760" y="145" width="20" height="15" as="geometry" />
+        </mxCell>
+        <mxCell id="legend3-text" value="Domain" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="785" y="142" width="60" height="20" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+  
+  <!-- PAGE 2: Class Diagram -->
+  <diagram id="class-diagram" name="2. Class Diagram">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title2" value="&lt;b&gt;Class Diagram - Master Controller&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="420" y="20" width="300" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- IScheduler Interface -->
+        <mxCell id="ischeduler" value="&lt;&lt;interface&gt;&gt;&#xa;IScheduler" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="440" y="70" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="ischeduler-attrs" value="" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="ischeduler">
+          <mxGeometry y="40" width="200" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="ischeduler-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="ischeduler">
+          <mxGeometry y="50" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="ischeduler-methods" value="+ handleHallCall(floor, dir)&#xa;+ handleCarCall(elevId, floor)&#xa;+ onElevatorArrived(elevId, floor)&#xa;+ onDoorsClosed(elevId)&#xa;+ tick()&#xa;+ getName(): string" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontStyle=2;" vertex="1" parent="ischeduler">
+          <mxGeometry y="58" width="200" height="92" as="geometry" />
+        </mxCell>
+        
+        <!-- MasterController -->
+        <mxCell id="master-ctrl" value="MasterController" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="420" y="280" width="240" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="master-attrs" value="- building_: Building&amp;&#xa;- eventQueue_: EventQueue&amp;&#xa;- assignments_: map&lt;pair, int&gt;&#xa;- mutex_: mutex" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="master-ctrl">
+          <mxGeometry y="26" width="240" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="master-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="master-ctrl">
+          <mxGeometry y="90" width="240" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="master-methods" value="+ handleHallCall(floor, dir)&#xa;+ handleCarCall(elevId, floor)&#xa;- selectElevator(floor, dir): int&#xa;- calculateCost(elev, floor, dir): int&#xa;- dispatchElevator(elevId)&#xa;- clearAssignment(floor, dir)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="master-ctrl">
+          <mxGeometry y="98" width="240" height="102" as="geometry" />
+        </mxCell>
+        
+        <!-- Inheritance Arrow -->
+        <mxCell id="inherit-arrow" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeWidth=2;" edge="1" parent="1" source="master-ctrl" target="ischeduler">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- Building -->
+        <mxCell id="building" value="Building" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="100" y="300" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="building-attrs" value="- floors_: vector&lt;Floor&gt;&#xa;- elevators_: vector&lt;unique_ptr&gt;&#xa;- config_: Config&#xa;- mutex_: mutex" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="building">
+          <mxGeometry y="26" width="200" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="building-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="building">
+          <mxGeometry y="90" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="building-methods" value="+ getElevator(id): Elevator&amp;&#xa;+ getFloor(num): Floor&amp;&#xa;+ registerHallCall(floor, dir)&#xa;+ clearHallCall(floor, dir)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="building">
+          <mxGeometry y="98" width="200" height="62" as="geometry" />
+        </mxCell>
+        
+        <!-- Elevator -->
+        <mxCell id="elevator" value="Elevator" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="100" y="520" width="200" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="elevator-attrs" value="- id_: int&#xa;- currentFloor_: int&#xa;- direction_: Direction&#xa;- state_: ElevatorState&#xa;- carCalls_: set&lt;int&gt;&#xa;- mutex_: mutex" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="elevator">
+          <mxGeometry y="26" width="200" height="94" as="geometry" />
+        </mxCell>
+        <mxCell id="elevator-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="elevator">
+          <mxGeometry y="120" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="elevator-methods" value="+ addCarCall(floor)&#xa;+ startMoving(dir, ticks)&#xa;+ arriveAtFloor(floor)&#xa;+ costToServe(floor, dir): int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="elevator">
+          <mxGeometry y="128" width="200" height="72" as="geometry" />
+        </mxCell>
+        
+        <!-- EventQueue -->
+        <mxCell id="eventqueue" value="EventQueue&lt;T&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="750" y="300" width="200" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="eventqueue-attrs" value="- queue_: queue&lt;T&gt;&#xa;- mutex_: mutex&#xa;- cv_: condition_variable&#xa;- shutdown_: atomic&lt;bool&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="eventqueue">
+          <mxGeometry y="26" width="200" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="eventqueue-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="eventqueue">
+          <mxGeometry y="90" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="eventqueue-methods" value="+ push(event)&#xa;+ pop(): optional&lt;T&gt;&#xa;+ tryPop(): optional&lt;T&gt;&#xa;+ shutdown()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="eventqueue">
+          <mxGeometry y="98" width="200" height="52" as="geometry" />
+        </mxCell>
+        
+        <!-- SimulationEngine -->
+        <mxCell id="simengine" value="SimulationEngine" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="750" y="520" width="200" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="simengine-attrs" value="- building_: Building&#xa;- scheduler_: unique_ptr&#xa;- eventQueue_: EventQueue&#xa;- running_: atomic&lt;bool&gt;&#xa;- currentTick_: atomic&lt;int&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="simengine">
+          <mxGeometry y="26" width="200" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="simengine-sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="simengine">
+          <mxGeometry y="110" width="200" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="simengine-methods" value="+ start()&#xa;+ stop()&#xa;+ requestHallCall(floor, dir)&#xa;- runSimulationLoop()" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="simengine">
+          <mxGeometry y="118" width="200" height="62" as="geometry" />
+        </mxCell>
+        
+        <!-- Associations -->
+        <mxCell id="assoc1" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="520" as="sourcePoint" />
+            <mxPoint x="200" y="460" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc1-label" value="1..*" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="170" y="490" width="30" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="assoc2" style="endArrow=open;endFill=0;html=1;rounded=0;strokeWidth=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="380" as="sourcePoint" />
+            <mxPoint x="300" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc2-label" value="uses" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="340" y="360" width="40" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="assoc3" style="endArrow=open;endFill=0;html=1;rounded=0;strokeWidth=1;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="660" y="380" as="sourcePoint" />
+            <mxPoint x="750" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="assoc3-label" value="uses" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="680" y="360" width="40" height="20" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+  
+  <!-- PAGE 3: Elevator State Machine -->
+  <diagram id="state-machine" name="3. Elevator State Machine">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title3" value="&lt;b&gt;Elevator State Machine&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="450" y="20" width="250" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Initial State -->
+        <mxCell id="initial" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="560" y="70" width="30" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- IDLE State -->
+        <mxCell id="state-idle" value="&lt;b&gt;IDLE&lt;/b&gt;&#xa;&#xa;Elevator stationary&#xa;Waiting for request" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="500" y="140" width="150" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- MOVING State -->
+        <mxCell id="state-moving" value="&lt;b&gt;MOVING&lt;/b&gt;&#xa;&#xa;Traveling between floors&#xa;Decrement ticks each tick" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="500" y="300" width="150" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- DOORS_OPENING State -->
+        <mxCell id="state-opening" value="&lt;b&gt;DOORS_OPENING&lt;/b&gt;&#xa;&#xa;Arrived at floor&#xa;Opening doors" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="500" y="460" width="150" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- DOORS_OPEN State -->
+        <mxCell id="state-open" value="&lt;b&gt;DOORS_OPEN&lt;/b&gt;&#xa;&#xa;Passengers boarding&#xa;Wait doorOpenTicks" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="500" y="620" width="150" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- DOORS_CLOSING State -->
+        <mxCell id="state-closing" value="&lt;b&gt;DOORS_CLOSING&lt;/b&gt;&#xa;&#xa;Preparing to move&#xa;or go idle" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="250" y="460" width="150" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Transitions -->
+        <mxCell id="trans1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="initial" target="state-idle">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="trans2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="state-idle" target="state-moving">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trans2-label" value="Request assigned&#xa;startMoving()" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="655" y="240" width="100" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="trans3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="state-moving" target="state-opening">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trans3-label" value="ticks == 0&#xa;arriveAtFloor()" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="655" y="400" width="100" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="trans4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="state-opening" target="state-open">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="trans4-label" value="ticks == 0&#xa;setDoorsOpen()" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="655" y="560" width="100" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="trans5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="state-open" target="state-closing">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="325" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="trans5-label" value="ticks == 0&#xa;closeDoors()" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="340" y="640" width="80" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="trans6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="state-closing" target="state-moving">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="325" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="trans6-label" value="[more requests]&#xa;dispatchElevator()" style="text;html=1;strokeColor=none;fillColor=none;align=right;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="200" y="330" width="110" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="trans7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="state-closing" target="state-idle">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="200" y="500" />
+              <mxPoint x="200" y="180" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="trans7-label" value="[no requests]&#xa;setIdle()" style="text;html=1;strokeColor=none;fillColor=none;align=right;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="100" y="280" width="90" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Legend Box -->
+        <mxCell id="legend-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="780" y="140" width="200" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title2" value="&lt;b&gt;Timing (Ticks)&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;" vertex="1" parent="1">
+          <mxGeometry x="830" y="150" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-text" value="floorTravelTicks = 2&#xa;(time to move 1 floor)&#xa;&#xa;doorOpenTicks = 3&#xa;(time doors stay open)&#xa;&#xa;Each state decrements&#xa;ticksRemaining until 0" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="800" y="180" width="160" height="120" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+  
+  <!-- PAGE 4: Request Flow Sequence -->
+  <diagram id="sequence-diagram" name="4. Hall Call Flow">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title4" value="&lt;b&gt;Hall Call Request Flow&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="450" y="20" width="250" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Actors/Objects -->
+        <mxCell id="user-box" value="&lt;b&gt;User/CLI&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="100" y="70" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="user-line" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="110" as="sourcePoint" />
+            <mxPoint x="140" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="engine-box2" value="&lt;b&gt;Simulation&#xa;Engine&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="280" y="70" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="engine-line" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="110" as="sourcePoint" />
+            <mxPoint x="320" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="queue-box" value="&lt;b&gt;Event&#xa;Queue&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="460" y="70" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="queue-line" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="110" as="sourcePoint" />
+            <mxPoint x="500" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="master-box2" value="&lt;b&gt;Master&#xa;Controller&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="640" y="70" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="master-line" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="110" as="sourcePoint" />
+            <mxPoint x="680" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <mxCell id="elev-box" value="&lt;b&gt;Elevator&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="820" y="70" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="elev-line" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="860" y="110" as="sourcePoint" />
+            <mxPoint x="860" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Message 1 -->
+        <mxCell id="msg1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="150" as="sourcePoint" />
+            <mxPoint x="320" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg1-label" value="1. hall 5 u" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="180" y="130" width="80" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Message 2 -->
+        <mxCell id="msg2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="200" as="sourcePoint" />
+            <mxPoint x="500" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg2-label" value="2. push(HallCallEvent)" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="350" y="180" width="120" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Activation Box -->
+        <mxCell id="act1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="495" y="195" width="10" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Message 3 -->
+        <mxCell id="msg3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="280" as="sourcePoint" />
+            <mxPoint x="680" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg3-label" value="3. handleHallCall(5, Up)" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="520" y="260" width="130" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Activation Box 2 -->
+        <mxCell id="act2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="675" y="275" width="10" height="120" as="geometry" />
+        </mxCell>
+        
+        <!-- Note 1 -->
+        <mxCell id="note1" value="4. selectElevator()&#xa;   - Calculate cost for each&#xa;   - Pick lowest cost" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=top;align=left;fillColor=#ffffcc;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="700" y="310" width="150" height="60" as="geometry" />
+        </mxCell>
+        
+        <!-- Message 4 -->
+        <mxCell id="msg4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="420" as="sourcePoint" />
+            <mxPoint x="860" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg4-label" value="5. dispatchElevator()" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="400" width="110" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Activation Box 3 -->
+        <mxCell id="act3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="855" y="415" width="10" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Message 5 -->
+        <mxCell id="msg5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="860" y="500" as="sourcePoint" />
+            <mxPoint x="680" y="500" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg5-label" value="6. startMoving(Up, 2)" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="710" y="480" width="110" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Loop box -->
+        <mxCell id="loop" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;strokeWidth=1;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="530" width="580" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="loop-label" value="loop [each tick until arrived]" style="text;html=1;strokeColor=none;fillColor=#f5f5f5;align=left;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="305" y="530" width="140" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Message 6 -->
+        <mxCell id="msg6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="570" as="sourcePoint" />
+            <mxPoint x="860" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg6-label" value="7. updateElevators() → decrementTick()" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="460" y="550" width="220" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Message 7 -->
+        <mxCell id="msg7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="860" y="650" as="sourcePoint" />
+            <mxPoint x="680" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg7-label" value="8. onElevatorArrived()" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="710" y="630" width="120" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Note 2 -->
+        <mxCell id="note2" value="9. clearAssignment()&#xa;   clearHallCall()&#xa;   openDoors()" style="shape=note;whiteSpace=wrap;html=1;size=14;verticalAlign=top;align=left;fillColor=#ffffcc;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="700" y="670" width="120" height="50" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+  
+  <!-- PAGE 5: Threading Model -->
+  <diagram id="threading-model" name="5. Threading Model">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title5" value="&lt;b&gt;Threading Model &amp;amp; Synchronization&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="350" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Main Thread Box -->
+        <mxCell id="main-thread" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="80" width="350" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="main-thread-label" value="&lt;b&gt;Main Thread&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="220" y="90" width="100" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="main-task1" value="CLI Input&#xa;Processing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="130" y="130" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="main-task2" value="Command&#xa;Parsing" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="130" y="200" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="main-task3" value="Request&#xa;Validation" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="130" y="270" width="100" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="main-arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="180" as="sourcePoint" />
+            <mxPoint x="180" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="main-arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="250" as="sourcePoint" />
+            <mxPoint x="180" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Event Queue -->
+        <mxCell id="eq-box" value="&lt;b&gt;EventQueue&lt;/b&gt;&#xa;&#xa;mutex + cv&#xa;Thread-safe" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;align=center;" vertex="1" parent="1">
+          <mxGeometry x="280" y="180" width="140" height="80" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow from main to queue -->
+        <mxCell id="mq-arrow" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="230" y="295" as="sourcePoint" />
+            <mxPoint x="280" y="240" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="260" y="295" />
+              <mxPoint x="260" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="mq-label" value="push()" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="250" y="295" width="40" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Simulation Loop Thread -->
+        <mxCell id="sim-thread" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="530" y="80" width="350" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="sim-thread-label" value="&lt;b&gt;Simulation Loop Thread&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="620" y="90" width="170" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sim-task1" value="Sleep&#xa;(tickDurationMs)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="560" y="130" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sim-task2" value="updateElevators()&#xa;State Machine" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="560" y="190" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sim-task3" value="scheduler.tick()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="560" y="250" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="sim-task4" value="processEvents()&#xa;tryPop()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="560" y="310" width="100" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="sim-arrow1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="170" as="sourcePoint" />
+            <mxPoint x="610" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sim-arrow2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="230" as="sourcePoint" />
+            <mxPoint x="610" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sim-arrow3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="610" y="290" as="sourcePoint" />
+            <mxPoint x="610" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        
+        <!-- Loop arrow -->
+        <mxCell id="loop-arrow" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1;endArrow=classic;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="680" y="340" as="sourcePoint" />
+            <mxPoint x="680" y="140" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="740" y="340" />
+              <mxPoint x="740" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="loop-label2" value="loop" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="745" y="230" width="30" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Arrow from queue to sim -->
+        <mxCell id="qs-arrow" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="240" as="sourcePoint" />
+            <mxPoint x="560" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="490" y="240" />
+              <mxPoint x="490" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qs-label" value="tryPop()" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="470" y="280" width="50" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Synchronization Table -->
+        <mxCell id="sync-table" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="420" width="780" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="sync-title" value="&lt;b&gt;Synchronization Points&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="400" y="430" width="180" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Table Headers -->
+        <mxCell id="header1" value="&lt;b&gt;Resource&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="120" y="460" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="header2" value="&lt;b&gt;Protection&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="270" y="460" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="header3" value="&lt;b&gt;Accessed By&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="470" y="460" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="header4" value="&lt;b&gt;Type&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="670" y="460" width="100" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Row 1 -->
+        <mxCell id="row1-1" value="EventQueue" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="490" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="row1-2" value="mutex + condition_variable" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="490" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="row1-3" value="Main, SimLoop" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="490" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="row1-4" value="Blocking" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="490" width="100" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Row 2 -->
+        <mxCell id="row2-1" value="Building (hall calls)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="520" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="row2-2" value="Building::mutex_" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="520" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="row2-3" value="Controller, CLI (status)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="520" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="row2-4" value="Lock guard" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="520" width="100" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Row 3 -->
+        <mxCell id="row3-1" value="Elevator state" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="550" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="row3-2" value="Elevator::mutex_" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="550" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="row3-3" value="SimLoop, Controller" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="550" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="row3-4" value="Lock guard" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="550" width="100" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Row 4 -->
+        <mxCell id="row4-1" value="Assignments map" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="580" width="150" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="row4-2" value="MasterController::mutex_" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="580" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="row4-3" value="Controller only" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="580" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="row4-4" value="Lock guard" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="580" width="100" height="30" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+  
+  <!-- PAGE 6: LOOK Algorithm -->
+  <diagram id="look-algorithm" name="6. LOOK Algorithm">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Title -->
+        <mxCell id="title6" value="&lt;b&gt;LOOK Scheduling Algorithm&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="430" y="20" width="280" height="30" as="geometry" />
+        </mxCell>
+        
+        <!-- Cost Formula Box -->
+        <mxCell id="formula-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="100" y="70" width="400" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="formula-title" value="&lt;b&gt;Cost Calculation Formula&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="200" y="80" width="200" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="formula-text" value="calculateCost(elevator, floor, direction):&#xa;&#xa;  distance = |elevator.floor - target.floor|&#xa;&#xa;  IF elevator is IDLE:&#xa;      cost = distance&#xa;&#xa;  ELSE IF same direction AND on-the-way:&#xa;      cost = distance&#xa;&#xa;  ELSE:&#xa;      cost = distance + 2 × numFloors&#xa;      (penalty for wrong direction)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="120" y="110" width="360" height="150" as="geometry" />
+        </mxCell>
+        
+        <!-- Selection Box -->
+        <mxCell id="select-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="550" y="70" width="350" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="select-title" value="&lt;b&gt;Elevator Selection&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="650" y="80" width="150" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="select-text" value="selectElevator(floor, direction):&#xa;&#xa;  bestCost = INFINITY&#xa;  bestElevator = -1&#xa;&#xa;  FOR each elevator:&#xa;      cost = calculateCost(elev, floor, dir)&#xa;      IF cost &lt; bestCost:&#xa;          bestCost = cost&#xa;          bestElevator = elev.id&#xa;&#xa;  RETURN bestElevator" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=12;fontFamily=Courier New;" vertex="1" parent="1">
+          <mxGeometry x="570" y="110" width="310" height="150" as="geometry" />
+        </mxCell>
+        
+        <!-- Example Visualization -->
+        <mxCell id="example-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="300" width="800" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="example-title" value="&lt;b&gt;Example: Hall Call at Floor 5 (Going Up)&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="380" y="310" width="240" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Floor shaft visualization -->
+        <mxCell id="shaft" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="200" y="350" width="30" height="250" as="geometry" />
+        </mxCell>
+        
+        <!-- Floor labels -->
+        <mxCell id="f10" value="10" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="165" y="352" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="f5" value="5 ◄" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;fontStyle=1;fontColor=#CC0000;" vertex="1" parent="1">
+          <mxGeometry x="155" y="477" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="f1" value="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="165" y="577" width="30" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- Hall call marker -->
+        <mxCell id="hall-marker" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="235" y="480" width="15" height="15" as="geometry" />
+        </mxCell>
+        
+        <!-- Elevator A -->
+        <mxCell id="elev-a-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="300" y="350" width="150" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="elev-a-title" value="&lt;b&gt;Elevator A&lt;/b&gt;&#xa;Floor 3, Moving Up" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="310" y="355" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="elev-a-car" value="▲" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="350" y="510" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="elev-a-calc" value="Cost = |3 - 5| = 2&#xa;Same dir + on-the-way&#xa;&lt;b&gt;Cost = 2&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=#d5e8d4;strokeColor=#82b366;align=center;fontSize=10;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="400" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Elevator B -->
+        <mxCell id="elev-b-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="480" y="350" width="150" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="elev-b-title" value="&lt;b&gt;Elevator B&lt;/b&gt;&#xa;Floor 8, IDLE" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="490" y="355" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="elev-b-car" value="●" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="530" y="395" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="elev-b-calc" value="Cost = |8 - 5| = 3&#xa;IDLE = no penalty&#xa;&lt;b&gt;Cost = 3&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=#fff2cc;strokeColor=#d6b656;align=center;fontSize=10;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="450" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Elevator C -->
+        <mxCell id="elev-c-box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="660" y="350" width="150" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="elev-c-title" value="&lt;b&gt;Elevator C&lt;/b&gt;&#xa;Floor 7, Moving Down" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="670" y="355" width="130" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="elev-c-car" value="▼" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry x="710" y="420" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="elev-c-calc" value="Cost = |7 - 5| = 2&#xa;Wrong direction!&#xa;&lt;b&gt;Cost = 2 + 20 = 22&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=#f8cecc;strokeColor=#b85450;align=center;fontSize=10;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="670" y="480" width="130" height="50" as="geometry" />
+        </mxCell>
+        
+        <!-- Result -->
+        <mxCell id="result" value="&lt;b&gt;RESULT: Elevator A selected (lowest cost = 2)&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="350" y="620" width="300" height="30" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+  
+</mxfile>
